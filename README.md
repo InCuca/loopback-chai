@@ -12,3 +12,9 @@ import loopbackChai from 'loopback-chai';
 
 chai.use(loopbackChai);
 ```
+
+## Added Assertions
+
+```js
+expect(modelInstance).to.be.an.model
+```
