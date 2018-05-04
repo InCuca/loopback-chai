@@ -3,16 +3,16 @@ import * as properties from './properties';
 import * as methods from './methods';
 
 function addProperties(Assertion) {
-  properties.forEach(
-    property =>
-      Assertion.addProperty(property.name, property)
+  Object.entries(properties).forEach(
+    entry =>
+      Assertion.addProperty(entry[0], entry[1])
   )
 }
 
 function addMethods(Assertion) {
-  methods.forEach(
-    method =>
-      Assertion.addProperty(method.name, method)
+  Object.entries(methods).forEach(
+    entry =>
+      Assertion.addMethod(entry[0], entry[1])
   )
 }
 
