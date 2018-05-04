@@ -13,11 +13,15 @@ export default {
         format: 'cjs'
     },
     plugins: [
-        fixMktmpdir,
-        resolve({
-          preferBuiltins: true,
-        }),
-        commonjs(),
+      fixMktmpdir,
+      resolve({
+        preferBuiltins: true,
+      }),
+      commonjs({
+        namedExports: {
+          'node_modules/chai/index.js': ['expect']
+        }
+      }),
         json(),
         babel({
             presets: [
