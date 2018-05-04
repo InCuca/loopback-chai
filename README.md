@@ -16,5 +16,5 @@ chai.use(loopbackChai);
 ## Added Assertions
 
 ```js
-expect(modelInstance).to.be.an.model
+expect(modelInstance).to.be.model
 ```
