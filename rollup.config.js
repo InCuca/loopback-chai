@@ -8,7 +8,7 @@ import pkg from './package.json';
 import fixMktmpdir from './.rollup/fix-mktmpdir';
 
 export default {
-    input: 'index.js',
+    input: 'src/index.js',
     output: {
         file: 'dist/loopback-chai.js',
         format: 'cjs'
