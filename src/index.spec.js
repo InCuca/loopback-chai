@@ -11,16 +11,12 @@ describe('index', () => {
   });
 
   // Properties
-  Object.keys(properties).forEach(
-    prop => it('should declare prop ' + prop + ' in Assertion prototype', () => {
-      expect(assertions).toContain(prop)
-    })
-  );
+  Object.keys(properties).forEach(prop => it(`should declare prop ${prop} in Assertion prototype`, () => {
+    expect(assertions).toContain(prop);
+  }));
 
   // Methods
-  Object.keys(methods).forEach(
-    method => it('should declare method ' + method + ' in Assertion prototype', () => {
-      expect(assertions).toContain(method)
-    })
-  );
-})
+  Object.keys(methods).forEach(method => it(`should declare method ${method} in Assertion prototype`, () => {
+    expect(assertions).toContain(method);
+  }));
+});
