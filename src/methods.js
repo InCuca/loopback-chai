@@ -1,3 +1,3 @@
-export function haveMany(relationship) {
+export function haveMany() {
 
 }
