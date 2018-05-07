@@ -22,7 +22,7 @@ describe('haveMany assertion', () => {
   });
 
   it('do not assert haveMany if missing relationship name', () => {
-    expect(hasMany({})).toBeFalsy();
-    expect(hasMany({}, 'balls')).toBeFalsy();
+    expect(hasMany({ noop: {} })).toBeFalsy();
+    expect(hasMany({ noop: {} }, 'balls')).toBeFalsy();
   });
 });
