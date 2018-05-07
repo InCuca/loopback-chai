@@ -3,6 +3,10 @@
 
 Repository of [chai](http://www.chaijs.com) assertions for loopback
 
+## External Dependencies
+
+This plugin expects that you have [chai](http://www.chaijs.com) and [loopback](http://loopback.io) packages available to import.
+
 ## Usage with Chai
 
 
