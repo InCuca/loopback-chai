@@ -5,7 +5,7 @@ describe('haveMany assertion', () => {
   chai.use(loopbackChai);
 
   function hasMany(obj, ...args) {
-    return chai
+    return () => chai
       .expect(obj)
       .to
       .haveMany(...args);
@@ -18,11 +18,11 @@ describe('haveMany assertion', () => {
         model: 'Ball',
         foreignKey: 'modelId',
       },
-    }, 'balls')).toBeTruthy();
+    }, 'balls')).not.toThrow();
   });
 
   it('do not assert haveMany if missing relationship name', () => {
-    expect(hasMany({ noop: {} })).toBeFalsy();
-    expect(hasMany({ noop: {} }, 'balls')).toBeFalsy();
+    expect(hasMany({})).toThrow();
+    expect(hasMany({ noop: {} }, 'balls')).toThrow();
   });
 });
