@@ -24,5 +24,15 @@ describe('haveMany assertion', () => {
   it('do not assert haveMany if missing relationship name', () => {
     expect(hasMany({})).toThrow();
     expect(hasMany({ noop: {} }, 'balls')).toThrow();
+    expect(hasMany({ balls: undefined }, 'balls')).toThrow();
+    expect(hasMany({ balls: null }, 'balls')).toThrow();
+    expect(hasMany({ balls: '' }, 'balls')).toThrow();
+  });
+
+  it('do not assert haveMany if missing relationship type', () => {
+    expect(hasMany({ balls: {} }, 'balls')).toThrow();
+    expect(hasMany({ balls: { type: undefined } }, 'balls')).toThrow();
+    expect(hasMany({ balls: { type: null } }, 'balls')).toThrow();
+    expect(hasMany({ balls: { type: 'belongsTo' } }, 'balls')).toThrow();
   });
 });
