@@ -1,5 +1,5 @@
 import chai from 'chai';
-import loopbackChai from './index';
+import loopbackChai from '../index';
 
 describe('haveMany assertion', () => {
   const perfectRelMock = {
