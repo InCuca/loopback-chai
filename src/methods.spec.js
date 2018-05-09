@@ -66,11 +66,23 @@ describe('haveMany assertion', () => {
     expect(hasMany({ balls: '' }, 'balls')).toThrow();
   });
 
+  it('throws if missing arguments', () => {
+    expect(hasMany(
+      perfectRelMock,
+      'balls',
+      perfectRelMock.balls.model,
+    )).toThrow();
+    expect(hasMany(
+      perfectRelMock,
+      'balls',
+    )).toThrow();
+    expect(hasMany(perfectRelMock)).toThrow();
+    expect(hasMany()).toThrow();
+  });
+
   it('assert haveMany relationship', () => {
     const subj = perfectRelMock;
     const { model, foreignKey } = perfectRelMock.balls;
-    expect(hasMany(subj, 'balls')).not.toThrow();
-    expect(hasMany(subj, 'balls', model)).not.toThrow();
     expect(hasMany(subj, 'balls', model, foreignKey)).not.toThrow();
   });
 });

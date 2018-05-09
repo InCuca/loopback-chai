@@ -10,13 +10,9 @@ export function haveMany(relationship, model, foreignKey) {
 
   expect(relObj).to.haveOwnProperty('model');
   expect(relObj.model).to.not.empty;
-  if (model) {
-    expect(relObj.model).to.equal(model);
-  }
+  expect(relObj.model).to.equal(model);
 
   expect(relObj).to.haveOwnProperty('foreignKey');
   expect(relObj.foreignKey).to.not.empty;
-  if (foreignKey) {
-    expect(relObj.foreignKey).to.equal(foreignKey);
-  }
+  expect(relObj.foreignKey).to.equal(foreignKey);
 }
