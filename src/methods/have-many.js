@@ -16,3 +16,7 @@
 //   expect(relObj.foreignKey).to.not.empty;
 //   expect(relObj.foreignKey).to.equal(foreignKey);
 // }
+
+export function haveMany() {
+
+}
