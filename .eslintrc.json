@@ -22,6 +22,11 @@
     "no-underscore-dangle": "off",
     "no-unused-expressions": "off"
   },
+  "settings": {
+    "import/core-modules": [
+      "loopback-datasource-juggler"
+    ]
+  },
   "globals": {
     "describe": true,
     "expect": true,
