@@ -1,3 +1,18 @@
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/InCuca/loopback-chai/compare/v2.1.1...v2.2.0) (2018-05-10)
+
+
+### Bug Fixes
+
+* **relationship:** add missing assertion ([6fb998a](https://github.com/InCuca/loopback-chai/commit/6fb998a))
+
+
+### Features
+
+* **methods:** add inherits assertion ([4aa7226](https://github.com/InCuca/loopback-chai/commit/4aa7226))
+
+
+
 <a name="2.1.1"></a>
 ## [2.1.1](https://github.com/InCuca/loopback-chai/compare/v2.1.0...v2.1.1) (2018-05-10)
 
