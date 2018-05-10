@@ -90,3 +90,45 @@
 //     expect(hasMany(subj, 'balls', model, foreignKey)).not.toThrow();
 //   });
 // });
+import chai from 'chai';
+import { createMockedModel } from '../../test-utils';
+import loopbackChai from '../index';
+
+describe('haveMany assertion', () => {
+  const perfectSettings = {
+    relations: {
+      balls: {
+        type: 'hasMany',
+        model: 'Ball',
+        foreignKey: 'ballId',
+      },
+    },
+  };
+  const PerfectModel = createMockedModel(
+    'Ball',
+    perfectSettings,
+  );
+
+  function haveMany(subject, ...args) {
+    return () => chai
+      .expect(subject)
+      .to
+      .haveMany(...args);
+  }
+
+  chai.use(loopbackChai);
+
+  it('throws if missing arguments', () => {
+    expect(haveMany(
+      PerfectModel,
+      'balls',
+      'Ball',
+    )).toThrow();
+    expect(haveMany(
+      PerfectModel,
+      'balls',
+    )).toThrow();
+    expect(haveMany(PerfectModel)).toThrow();
+    expect(haveMany()).toThrow();
+  });
+});
