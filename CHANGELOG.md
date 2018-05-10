@@ -1,3 +1,13 @@
+<a name="2.1.1"></a>
+## [2.1.1](https://github.com/InCuca/loopback-chai/compare/v2.1.0...v2.1.1) (2018-05-10)
+
+
+### Bug Fixes
+
+* **property-of-type:** fix not asserting prop object with type and strings ([f9783a6](https://github.com/InCuca/loopback-chai/commit/f9783a6))
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/InCuca/loopback-chai/compare/v2.0.0...v2.1.0) (2018-05-10)
 
