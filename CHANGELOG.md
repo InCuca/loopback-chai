@@ -1,3 +1,13 @@
+<a name="2.2.1"></a>
+## [2.2.1](https://github.com/InCuca/loopback-chai/compare/v2.2.0...v2.2.1) (2018-05-10)
+
+
+### Bug Fixes
+
+* **property-of-type:** fix assertion target error ([29359d9](https://github.com/InCuca/loopback-chai/commit/29359d9))
+
+
+
 <a name="2.2.0"></a>
 # [2.2.0](https://github.com/InCuca/loopback-chai/compare/v2.1.1...v2.2.0) (2018-05-10)
 
