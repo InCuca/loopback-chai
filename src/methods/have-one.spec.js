@@ -2,13 +2,13 @@ import chai from 'chai';
 import { createMockedModel } from '../../test-utils';
 import loopbackChai from '../index';
 
-describe('haveMany assertion', () => {
+describe('haveOne assertion', () => {
   const PerfectModel = createMockedModel(
     'Ball',
     {
       relations: {
         balls: {
-          type: 'hasMany',
+          type: 'hasOne',
           model: 'Ball',
           foreignKey: 'ballId',
         },
@@ -16,22 +16,22 @@ describe('haveMany assertion', () => {
     },
   );
 
-  function haveMany(subject, ...args) {
+  function haveOne(subject, ...args) {
     return () => chai
       .expect(subject)
       .to
-      .haveMany(...args);
+      .haveOne(...args);
   }
 
   chai.use(loopbackChai);
 
   it('throws if missing arguments', () => {
-    expect(haveMany(
+    expect(haveOne(
       PerfectModel,
       'balls',
     )).toThrow();
-    expect(haveMany(PerfectModel)).toThrow();
-    expect(haveMany()).toThrow();
+    expect(haveOne(PerfectModel)).toThrow();
+    expect(haveOne()).toThrow();
   });
 
   it('throws if the model does not have matching relationship type', () => {
@@ -43,10 +43,10 @@ describe('haveMany assertion', () => {
         },
       },
     });
-    expect(haveMany(ErrModel, 'balls', 'Ball')).toThrow();
+    expect(haveOne(ErrModel, 'balls', 'Ball')).toThrow();
   });
 
   it('pass in perfect relationship', () => {
-    expect(haveMany(PerfectModel, 'balls', 'Ball')).not.toThrow();
+    expect(haveOne(PerfectModel, 'balls', 'Ball')).not.toThrow();
   });
 });

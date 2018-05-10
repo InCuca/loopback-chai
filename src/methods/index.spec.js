@@ -1,8 +1,16 @@
 import * as methods from '.';
 
 describe('methods', () => {
+  it('export relationship', () => {
+    expect(methods).toHaveProperty('relationship');
+  });
+
   it('export haveMany', () => {
     expect(methods).toHaveProperty('haveMany');
+  });
+
+  it('export haveOne', () => {
+    expect(methods).toHaveProperty('haveOne');
   });
 
   it('export propertyOfType', () => {
