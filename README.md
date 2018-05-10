@@ -26,4 +26,5 @@ expect(Model).to.haveOne('relationship', 'RelatedModel')
 expect(Model).to.haveOne('relationship', 'RelatedModel', 'relatedModelId')
 expect(Model).to.haveMany('relationship', 'RelatedModel')
 expect(Model).to.haveMany('relationship', 'RelatedModel', 'relatedModelId')
+expect(Model).to.inherits('BaseModel')
 ```
