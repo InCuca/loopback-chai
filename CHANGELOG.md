@@ -1,3 +1,18 @@
+<a name="2.3.0"></a>
+# [2.3.0](https://github.com/InCuca/loopback-chai/compare/v2.2.1...v2.3.0) (2018-05-10)
+
+
+### Bug Fixes
+
+* **test-utils:** change createMockedModel to use loopback createModel ([1bcbd8b](https://github.com/InCuca/loopback-chai/commit/1bcbd8b))
+
+
+### Features
+
+* **test-utils:** change DataSource to createModel of loopback ([1355a56](https://github.com/InCuca/loopback-chai/commit/1355a56))
+
+
+
 <a name="2.2.1"></a>
 ## [2.2.1](https://github.com/InCuca/loopback-chai/compare/v2.2.0...v2.2.1) (2018-05-10)
 
