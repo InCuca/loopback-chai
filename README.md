@@ -21,7 +21,6 @@ chai.use(loopbackChai);
 
 ```js
 expect(modelInstance).to.be.model
-expect(Model).to.haveMany('relationship')
 expect(Model).to.haveMany('relationship', 'RelatedModel')
 expect(Model).to.haveMany('relationship', 'RelatedModel', 'relatedModelId')
 expect(modelInstance).to.be.model
