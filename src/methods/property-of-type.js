@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 
 export function propertyOfType(prop, type) {
-  const props = this._obj.definition.properties.properties;
+  const props = this._obj.definition.properties;
   expect(props).to.ownProperty(prop);
 
   // transform both subject and expected into lowercase

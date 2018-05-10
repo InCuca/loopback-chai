@@ -17,62 +17,46 @@ describe('propertyOfType assertion', () => {
 
   it('throws if property is of wrong type', () => {
     expect(propertyOfType({
-      properties: {
-        foo: Object,
-      },
+      foo: Object,
     }, 'foo', String)).toThrow();
   });
 
   it('throws if property is missing', () => {
     expect(propertyOfType({
-      properties: {
-        foo: Object,
-      },
+      foo: Object,
     }, 'bar', Object)).toThrow();
   });
 
   it('throws if missing prop type', () => {
     expect(propertyOfType({
-      properties: {
-        foo: Object,
-      },
+      foo: Object,
     }, 'bar')).toThrow();
   });
 
   it('throws if missing prop name', () => {
     expect(propertyOfType({
-      properties: {
-        foo: Object,
-      },
+      foo: Object,
     })).toThrow();
   });
 
   it('pass with perfect property', () => {
     expect(propertyOfType({
-      properties: {
-        foo: Object,
-      },
+      foo: Object,
     }, 'foo', Object)).not.toThrow();
   });
 
   it('pass when type argument is a string', () => {
     expect(propertyOfType({
-      properties: {
-        foo: Object,
-      },
+      foo: Object,
     }, 'foo', 'Object')).not.toThrow();
   });
 
   it('pass when property is a object with type', () => {
     expect(propertyOfType({
-      properties: {
-        foo: { type: 'object' },
-      },
+      foo: { type: 'object' },
     }, 'foo', Object)).not.toThrow();
     expect(propertyOfType({
-      properties: {
-        foo: { type: Object },
-      },
+      foo: { type: Object },
     }, 'foo', Object)).not.toThrow();
   });
 });
