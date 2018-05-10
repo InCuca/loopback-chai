@@ -62,4 +62,17 @@ describe('propertyOfType assertion', () => {
       },
     }, 'foo', 'Object')).not.toThrow();
   });
+
+  it('pass when property is a object with type', () => {
+    expect(propertyOfType({
+      properties: {
+        foo: { type: 'object' },
+      },
+    }, 'foo', Object)).not.toThrow();
+    expect(propertyOfType({
+      properties: {
+        foo: { type: Object },
+      },
+    }, 'foo', Object)).not.toThrow();
+  });
 });
