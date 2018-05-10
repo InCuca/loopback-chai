@@ -2,9 +2,7 @@ import { expect } from 'chai';
 
 export function haveMany(relationship, model, foreignKey) {
   const props = this._obj.definition.properties;
-
   const relObj = props.relations[relationship];
-  // console.log(relObj);
   expect(relObj).to.haveOwnProperty('type');
   expect(relObj.type).to.equal('hasMany');
 
