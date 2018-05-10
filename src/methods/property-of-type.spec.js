@@ -3,11 +3,11 @@ import { createMockedModel } from '../../test-utils';
 import loopbackChai from '../index';
 
 describe('propertyOfType assertion', () => {
-  function propertyOfType(settings, ...args) {
+  function propertyOfType(properties, ...args) {
     return () => {
       chai.expect(createMockedModel(
         'MockedModel',
-        settings,
+        { properties },
       ))
         .to.be.a.propertyOfType(...args);
     };

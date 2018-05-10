@@ -11,5 +11,5 @@ export default function (name, schema = {}) {
     ...defaultSchema,
     ...schema,
   };
-  return loopback.createModel(name, settings);
+  return loopback.createModel(settings);
 }

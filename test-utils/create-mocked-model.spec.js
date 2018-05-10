@@ -5,13 +5,13 @@ describe('createMockedModel test util', () => {
     expect(() => createMockedModel()).toThrow();
   });
 
-  it('creates an Model', () => {
+  it('creates a Model', () => {
     const stub = {};
     const Foo = createMockedModel('Foo', stub);
     expect(Foo.definition.name).toEqual('Foo');
   });
 
-  it('creates an Model with relationship', () => {
+  it('creates a Model with relationship', () => {
     const mock = {
       relations: {
         balls: {
@@ -22,6 +22,6 @@ describe('createMockedModel test util', () => {
       },
     };
     const Foo = createMockedModel('Foo', mock);
-    expect(Foo.definition.rawProperties.relations).toEqual(mock.relations);
+    expect(Foo.definition.settings.relations).toEqual(mock.relations);
   });
 });

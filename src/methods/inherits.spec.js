@@ -26,8 +26,8 @@ describe('inherits assertion', () => {
   });
 
   it('pass with a model base that matches the argument', () => {
-    const Foo = createMockedModel('Foo', { base: 'Bar' });
     const Bar = createMockedModel('Bar', {});
-    expect(inherits(Foo, Bar)).toThrow();
+    const Foo = createMockedModel('Foo', { base: Bar });
+    expect(inherits(Foo, Bar)).not.toThrow();
   });
 });
