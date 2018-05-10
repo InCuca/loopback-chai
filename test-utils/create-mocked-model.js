@@ -1,4 +1,4 @@
-import { DataSource } from 'loopback-datasource-juggler';
+import loopback from 'loopback';
 
 export default function (name, schema = {}) {
   const defaultSchema = {
@@ -11,6 +11,5 @@ export default function (name, schema = {}) {
     ...defaultSchema,
     ...schema,
   };
-  const ds = new DataSource();
-  return ds.createModel(name, settings);
+  return loopback.createModel(name, settings);
 }

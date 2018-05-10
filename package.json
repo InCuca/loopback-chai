@@ -37,7 +37,6 @@
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jest": "^21.15.1",
     "jest": "^22.4.3",
-    "loopback-datasource-juggler": "^3.18.1",
     "regenerator-runtime": "^0.11.1",
     "rollup": "^0.57.1",
     "rollup-plugin-auto-external": "^1.2.0",

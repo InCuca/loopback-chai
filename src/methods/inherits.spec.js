@@ -13,7 +13,7 @@ describe('inherits assertion', () => {
   it('throw with a model without base', () => {
     expect(inherits(
       createMockedModel('Foo', {}),
-      loopback.Model,
+      loopback.User,
     )).toThrow();
   });
 
