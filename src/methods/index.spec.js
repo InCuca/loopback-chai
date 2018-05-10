@@ -16,4 +16,8 @@ describe('methods', () => {
   it('export propertyOfType', () => {
     expect(methods).toHaveProperty('propertyOfType');
   });
+
+  it('export inherits', () => {
+    expect(methods).toHaveProperty('inherits');
+  });
 });
