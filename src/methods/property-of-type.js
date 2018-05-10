@@ -1,21 +1,11 @@
-// // import { expect } from 'chai';
+import { expect } from 'chai';
 
-// export function propertyOfType() {
-//   // const subj = this._obj;
-//   // expect(subj.properties).to.haveOwnProperty(property);
-//   // const prop = subj.properties[property];
-//   // expect(prop).to.haveOwnProperty('type');
-//   // expect(prop.type).to.oneOf([
-//   //   'any',
-//   //   'array',
-//   //   'boolean',
-//   //   'buffer',
-//   //   'date',
-//   //   'GeoPoint',
-//   //   ''
-//   // ])
-// }
-
-export function propertyOfType() {
-
+export function propertyOfType(prop, type) {
+  const props = this._obj.definition.properties.properties;
+  expect(props).to.ownProperty(prop);
+  if (typeof type === 'string') {
+    expect(props[prop].name.toLowerCase()).to.equal(type.toLocaleLowerCase());
+  } else {
+    expect(props[prop]).to.equal(type);
+  }
 }
