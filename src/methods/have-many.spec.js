@@ -95,18 +95,17 @@ import { createMockedModel } from '../../test-utils';
 import loopbackChai from '../index';
 
 describe('haveMany assertion', () => {
-  const perfectSettings = {
-    relations: {
-      balls: {
-        type: 'hasMany',
-        model: 'Ball',
-        foreignKey: 'ballId',
-      },
-    },
-  };
   const PerfectModel = createMockedModel(
     'Ball',
-    perfectSettings,
+    {
+      relations: {
+        balls: {
+          type: 'hasMany',
+          model: 'Ball',
+          foreignKey: 'ballId',
+        },
+      },
+    },
   );
 
   function haveMany(subject, ...args) {
@@ -122,13 +121,53 @@ describe('haveMany assertion', () => {
     expect(haveMany(
       PerfectModel,
       'balls',
-      'Ball',
-    )).toThrow();
-    expect(haveMany(
-      PerfectModel,
-      'balls',
     )).toThrow();
     expect(haveMany(PerfectModel)).toThrow();
     expect(haveMany()).toThrow();
+  });
+
+  it('throws if the model does not have relationship', () => {
+    const ErrModel = createMockedModel('Ball', {});
+    expect(haveMany(ErrModel, 'balls', 'Ball')).toThrow();
+  });
+
+  it('throws if the model does not matching relationship', () => {
+    const ErrModel = createMockedModel('Ball', {
+      relations: {
+        trees: {
+          type: 'hasMany',
+          model: 'Ball',
+        },
+      },
+    });
+    expect(haveMany(ErrModel, 'balls', 'Ball')).toThrow();
+  });
+
+  it('throws if the model does not have matching relationship type', () => {
+    const ErrModel = createMockedModel('Ball', {
+      relations: {
+        balls: {
+          type: 'belongsTo',
+          model: 'Ball',
+        },
+      },
+    });
+    expect(haveMany(ErrModel, 'balls', 'Ball')).toThrow();
+  });
+
+  it('throws if the model does not have matching relationship model', () => {
+    const ErrModel = createMockedModel('Ball', {
+      relations: {
+        balls: {
+          type: 'hasMany',
+          model: 'Tree',
+        },
+      },
+    });
+    expect(haveMany(ErrModel, 'balls', 'Ball')).toThrow();
+  });
+
+  it('pass in perfect relationship', () => {
+    expect(haveMany(PerfectModel, 'balls', 'Ball')).not.toThrow();
   });
 });

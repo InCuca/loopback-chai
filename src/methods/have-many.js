@@ -1,11 +1,10 @@
 import { expect } from 'chai';
 
 export function haveMany(relationship, model, foreignKey) {
-  // const def = this._obj.definition;
-  expect(this._obj).to.haveOwnProperty(relationship);
-  expect(this._obj[relationship]).to.be.an('object');
+  const props = this._obj.definition.properties;
 
-  const relObj = this._obj[relationship];
+  const relObj = props.relations[relationship];
+  // console.log(relObj);
   expect(relObj).to.haveOwnProperty('type');
   expect(relObj.type).to.equal('hasMany');
 
@@ -15,5 +14,7 @@ export function haveMany(relationship, model, foreignKey) {
 
   expect(relObj).to.haveOwnProperty('foreignKey');
   expect(relObj.foreignKey).to.not.empty;
-  expect(relObj.foreignKey).to.equal(foreignKey);
+  if (foreignKey) {
+    expect(relObj.foreignKey).to.equal(foreignKey);
+  }
 }
