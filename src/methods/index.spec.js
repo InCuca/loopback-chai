@@ -5,6 +5,10 @@ describe('methods', () => {
     expect(methods).toHaveProperty('relationship');
   });
 
+  it('export belongsTo', () => {
+    expect(methods).toHaveProperty('belongsTo');
+  });
+
   it('export haveMany', () => {
     expect(methods).toHaveProperty('haveMany');
   });

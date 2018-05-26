@@ -23,6 +23,8 @@ chai.use(loopbackChai);
 expect(modelInstance).to.be.model
 expect(Model).to.have.relationship('name', 'RelatedModel')
 expect(Model).to.have.a.propertyOfType('property', Object)
+expect(Model).to.belongsTo('relationship', 'RelatedModel')
+expect(Model).to.belongsTo('relationship', 'RelatedModel', 'relatedModelId')
 expect(Model).to.haveOne('relationship', 'RelatedModel')
 expect(Model).to.haveOne('relationship', 'RelatedModel', 'relatedModelId')
 expect(Model).to.haveMany('relationship', 'RelatedModel')
