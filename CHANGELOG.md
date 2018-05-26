@@ -1,3 +1,17 @@
+<a name="2.4.0"></a>
+# [2.4.0](https://github.com/InCuca/loopback-chai/compare/v2.3.0...v2.4.0) (2018-05-26)
+
+
+### Features
+
+* **cc:** add badges ([2c605d9](https://github.com/InCuca/loopback-chai/commit/2c605d9))
+* **methods:** add belongsTo ([95ac884](https://github.com/InCuca/loopback-chai/commit/95ac884))
+* **package:** add coverage to test output ([bc140b4](https://github.com/InCuca/loopback-chai/commit/bc140b4))
+* **travis:** add cc-test-reporter ([69dfed8](https://github.com/InCuca/loopback-chai/commit/69dfed8))
+* **travis:** add test converage reporter ([e12bddd](https://github.com/InCuca/loopback-chai/commit/e12bddd))
+
+
+
 <a name="2.3.0"></a>
 # [2.3.0](https://github.com/InCuca/loopback-chai/compare/v2.2.1...v2.3.0) (2018-05-10)
 
