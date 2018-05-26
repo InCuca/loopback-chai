@@ -1,9 +1,13 @@
 language: node_js
 node_js:
-  - "node"
+- node
 before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+env:
+  global:
+    secure: clyXSIQOXHHmEFwoEa/NPB13Otg3MEpFFU4KoUfZxdIhEE39mCDJJFLcah0EvNq7Ebxg8p3LfZvIORCY2LSUbMMDVL2J8OlUdIebIi4lPiua7FEzo3TT1N2x/MKiW7OM1mJjLuuTxBM0blNrCuTJCKPZ1StEuRw2XCp9U9iOXtVus9c/9a83GkyqQ5QeoWn7M3OWWPB9H1jEqY3Uu9fPtercFh40a+duW+c+QY6IEBhga1CynESudpRXdJWLgeraZUTZ+0IDKGcBYHeDZw2AmXHaQX9UYJuFQWZnpHGndsUPQYWjpfN3GlZB5GlFHsZtOjb4rcvk2ZD6cc5AMkWeBeewdMF+s8G1tdHyGW4N7DS5PBBqXF29YiRRPbP44fwVo1orLPBBlm1/UV5CDUx6uyaMIRK5aBn2oUGfu00wbnyQJpob0/R1Nx8DGTgf+3Earu1bAq7QhszfChgQGfvdIeNWbOGQs9d2ABPT3/pe6Aqa4ATr8x3DGrMl3E0AMpxFQCRRtrPPqWSNSK2LwKg1fTQS9RtHEq7RY2hNuTlJhUxiNwq3QO0O9WbWbGypCbHBLYi9qtAmcl55fVsSErtEBSWcUdm2qN0aR17Et2SKayZlwC2TPhH8K84Nl4HFG8ZMDyc4g28YhlIsVcV1cnVBwlAiLvjbkk0XkmUna2Lp2GQ=
