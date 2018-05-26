@@ -1,5 +1,8 @@
 # loopback-chai
-[![Travis](https://img.shields.io/travis/InCuca/loopback-chai/master.svg)](https://travis-ci.org/InCuca/loopback-chai/branches)
+[![Travis](https://img.shields.io/travis/InCuca/loopback-chai/master.svg)](https://travis-ci.org/InCuca/loopback-chai/branches) [![Code Climate](https://img.shields.io/codeclimate/coverage/InCuca/loopback-chai.svg)](https://codeclimate.com/github/InCuca/loopback-chai/test_coverage)
+[![Code Climate](https://img.shields.io/codeclimate/maintainability/InCuca/loopback-chai.svg)](https://codeclimate.com/github/InCuca/loopback-chai/maintainability)
+
+
 
 Repository of [chai](http://www.chaijs.com) assertions for loopback
 
