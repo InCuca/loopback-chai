@@ -2,6 +2,7 @@ import chai from 'chai';
 import loopbackChai from './index';
 import * as properties from './properties';
 import * as methods from './methods';
+import * as dependencies from './helpers/assertion';
 
 describe('index', () => {
   let assertions;
@@ -19,4 +20,13 @@ describe('index', () => {
   Object.keys(methods).forEach(method => it(`should declare method ${method} in Assertion prototype`, () => {
     expect(assertions).toContain(method);
   }));
+
+  it('uses addItemsOnAssertion helper', (done) => {
+    dependencies.addItemsOnAssertion = jest.fn();
+    chai.use((context) => {
+      loopbackChai(context);
+      expect(dependencies.addItemsOnAssertion).toBeCalled();
+      done();
+    });
+  });
 });
